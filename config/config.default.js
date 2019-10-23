@@ -18,18 +18,29 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
-  //mysql config
+  // mysql config
   config.mysql = {
     client: {
       host: 'localhost',
       port: '3306',
       user: 'root',
       password: 'SYdehaody91',
-      database: 'douquan'
+      database: 'douquan',
     },
     app: true,
-    agent: false
-  }
+    agent: false,
+  };
+  config.sequelize = {
+    dialect: 'mysql',
+    host: '127.0.0.1',
+    port: 3306,
+    user: 'root',
+    password: 'SYdehaody91',
+    database: 'douquan',
+    define: {
+      timestamps: false
+    }
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
