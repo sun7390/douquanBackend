@@ -3,8 +3,8 @@
 const Controller = require('egg').Controller;
 
 function toInt(str) {
-  if(typeof str === 'number') return str
-  if(!str) return str
+  if (typeof str === 'number') return str;
+  if (!str) return str;
   return parseInt(str, 10) || 0;
 }
 
@@ -17,9 +17,9 @@ class ArticleController extends Controller {
     ctx.body = user;
   }
   async index() {
-    const ctx = this.ctx
-    const query = { limit: toInt(ctx.query.limit), offset: toInt(ctx.query.offset)}
-    ctx.body = await ctx.model.Articles.findAll(query)
+    const ctx = this.ctx;
+    const query = { limit: toInt(ctx.query.limit), offset: toInt(ctx.query.offset) };
+    ctx.body = await ctx.model.Articles.findAll(query);
   }
 }
 

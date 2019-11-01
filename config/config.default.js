@@ -38,9 +38,19 @@ module.exports = appInfo => {
     password: 'SYdehaody91',
     database: 'douquan',
     define: {
-      timestamps: false
-    }
+      timestamps: false,
+    },
   };
+  config.security = {
+    csrf: {
+      headerName: 'x-csrf-token',
+    }
+  }
+  config.cors = {
+    origin: 'http://localhost:3000',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+    credentials: true,
+  }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
